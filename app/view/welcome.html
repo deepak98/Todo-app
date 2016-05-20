@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="../css/style.css">
+	<script type="text/javascript" src="../js/script.js"></script>
+<body>
+
+<div class="logout">
+<form action="./logout" method="post">
+   <input type="submit" class="logout_button" value="Logout">
+</form>
+</div>
+
+<div class="add_todo" style="width:50%;">
+<p id="add"><u><b>ADD NEW TASK</b></u></p>
+<br>
+<br>
+<form name="add_todo" method="post" action="./addtodo" id="add_todo" onsubmit="return validate()" >
+
+	<input type="text" name="title" placeholder="Title of Task" class="textbox">
+	<span id="title" class="error"></span>
+
+        <br><br><br>
+
+	<input type="text" name="content" placeholder="Description of Task" class="textbox">
+	<span id="content" class="error"></span>
+
+	    <br><br><br><br>
+
+	<input type="submit" class="button" style="margin-left:16%">    
+</form>
+</div>
+
+
+<br><br><br><br><br>
+
+<div class="tasks">
+<p id="title_task"><u>PENDING TASKS</u></p>
+
+<form name="display_tasks" action="./donetodo" method="post">
+{% for task in tasks %}
+<div class="entry">
+	<div class="status">
+		<input type="checkbox" name="checkbox[]" id="checkbox[]" value={{task.task_id}}>
+	</div>
+	<div class="title">
+	    {{task.title}}
+	</div>
+	<div class="content">
+	    {{task.content}}
+	</div>
+			
+	<br><br>
+		
+		
+	</div>
+	
+	
+
+{% endfor %}
+<input type="submit" value="Complete" class="button">
+
+	
+</form>
+</div>
+
+
+</body>
+</html>

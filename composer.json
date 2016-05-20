@@ -1,0 +1,21 @@
+{
+    "name": "deepak/todo",
+    "description": "todo app",
+    "authors": [
+        {
+            "name": "deepak",
+            "email": "getdeepak98@gmail.com"
+        }
+    ],
+    "require": {
+        "twig/twig": "^1.24",
+        "torophp/torophp": "dev-master"
+    },
+    "autoload":{
+    "classmap":[
+    "app/model",
+    "app/controller",
+    "app/view"
+    ]
+  }
+}
